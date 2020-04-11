@@ -14,6 +14,15 @@ import { PriceSearchComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { ShoppingCartComponent } from './product/shopping-cart/shopping-cart.component';
+import { FiltersComponent } from './product/shopping-cart/filters/filters.component';
+import { CartComponent } from './product/shopping-cart/cart/cart.component';
+import { CartItemComponent } from './product/shopping-cart/cart/cart-item/cart-item.component';
+import { ProductItemComponent } from './product/shopping-cart/product-list/product-item/product-item.component';
+import { HeaderComponent } from './product/shared/header/header.component';
+import { FooterComponent } from './product/shared/footer/footer.component';
+import { ProductListComponent } from './product/shopping-cart/product-list/product-list.component';
 
 const google_oauth_client_id =
   '113929152064-osdmb61gpl4d06ls9717kasgfntc4dam.apps.googleusercontent.com';
@@ -26,7 +35,14 @@ const config = new AuthServiceConfig([
 ]);
 
 @NgModule({
-  declarations: [PriceSearchComponent, routingComponents],
+  declarations: [PriceSearchComponent, routingComponents, HomeComponent,HeaderComponent,
+    FooterComponent,
+    ShoppingCartComponent,
+    FiltersComponent,
+    CartComponent,
+    CartItemComponent,
+    ProductItemComponent,
+    ProductListComponent],
   imports: [
     BrowserModule,
     MatSidenavModule,
