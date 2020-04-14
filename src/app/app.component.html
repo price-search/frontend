@@ -1,44 +1,46 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    [ngClass]="{ hidden: !(isHandset | async)!.matches }"
-    fixedInViewport="true"
-    [attr.role]="isHandset ? 'dialog' : 'navigation'"
-    [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
-    [opened]="!(isHandset | async)!.matches"
-  >
-    <mat-toolbar color="white">Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="home" routerLinkActive="active"
-        >Home</a
-      >
-      <a mat-list-item routerLink="favorite" routerLinkActive="active"
-        >Favorite</a
-      >
-      <a mat-list-item routerLink="product" routerLinkActive="active"
-        >Product List</a
-      >
-      <a mat-list-item href="/mapa">Map</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="(isHandset | async)!.matches"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu </mat-icon>
-      </button>
-      <span>Price Search</span>
-      <span class="spacer"></span>
-      <a mat-raised-button (click)="signIn('Google')">Sign in with Google</a>
-      <a mat-raised-button (click)="signOut()">Sign Out</a>
-    </mat-toolbar>
-    <ng-content></ng-content>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+  <a class="navbar-brand h1 mb-0" href="#">Price Search</a>
+
+  <form class="form-inline">
+    <input class="form-control mr-1 btn-sm col" type="search" placeholder="Buscar...">
+    <button class="btn btn-secondary btn-sm" type="Submit">Ok</button>
+  </form>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSite">
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="product">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="favorite">Favorite</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="mapa">Map</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+      <li>
+        <button type="button" class="btn btn-success btn-sm mb-1 mr-1" (click)="signIn('Google')">Sign in with Google</button>
+      </li>
+
+      <li>
+        <button type="button" class="btn btn-danger btn-sm" (click)="signOut()">Sign Out</button>
+      </li>
+      
+    </ul>
+    
+  </div>
+  
+</nav>
+
 <router-outlet></router-outlet>
