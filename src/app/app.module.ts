@@ -20,7 +20,6 @@ import { FiltersComponent } from './product/shopping-cart/filters/filters.compon
 import { CartComponent } from './product/shopping-cart/cart/cart.component';
 import { CartItemComponent } from './product/shopping-cart/cart/cart-item/cart-item.component';
 import { ProductItemComponent } from './product/shopping-cart/product-list/product-item/product-item.component';
-import { HeaderComponent } from './product/shared/header/header.component';
 import { FooterComponent } from './product/shared/footer/footer.component';
 import { ProductListComponent } from './product/shopping-cart/product-list/product-list.component';
 
@@ -35,7 +34,7 @@ const config = new AuthServiceConfig([
 ]);
 
 @NgModule({
-  declarations: [PriceSearchComponent, routingComponents, HomeComponent,HeaderComponent,
+  declarations: [PriceSearchComponent, routingComponents, HomeComponent,
     FooterComponent,
     ShoppingCartComponent,
     FiltersComponent,
