@@ -1,0 +1,18 @@
+<li *ngFor="let list of productList">
+    <span class="lista">{{list.name}}</span>
+    <div *ngFor="let product of list.products">
+        <span class="lista">{{product.name}}</span><br>
+        <span class="lista">{{product.price}}</span>
+    </div>
+    
+    <!--<app-show-list [list]="list.name"></app-show-list>-->
+</li>
+    <form #listaForm="ngForm" (ngSubmit)="save(item)">
+        <span>Create List</span>
+        <input required id="name" name="name" [(ngModel)]="item.name" type="text" class="form-control">
+        
+        <div class="list-footer">
+            <button type="submit" class="btn btn-secondary">Save</button>
+        </div>
+    </form>
+    

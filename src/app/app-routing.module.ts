@@ -5,6 +5,7 @@ import { ProductComponent } from './product/product.component';
 import { MapaComponent } from './mapa/mapa.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { ListaComponent } from './lista/lista.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'mapa',
     component: MapaComponent
+  },
+  {
+    path: 'lista',
+    component: ListaComponent
   }
 ];
 

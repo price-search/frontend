@@ -22,6 +22,10 @@ import { CartItemComponent } from './product/shopping-cart/cart/cart-item/cart-i
 import { ProductItemComponent } from './product/shopping-cart/product-list/product-item/product-item.component';
 import { FooterComponent } from './product/shared/footer/footer.component';
 import { ProductListComponent } from './product/shopping-cart/product-list/product-list.component';
+import {ListaComponent} from './lista/lista.component';
+import {FormsModule} from '@angular/forms';
+import { ListaService } from './services/lista.service';
+import {ModalComponent} from './product/shopping-cart/product-list/product-item/modal/modal.component';
 
 const google_oauth_client_id =
   '113929152064-osdmb61gpl4d06ls9717kasgfntc4dam.apps.googleusercontent.com';
@@ -41,8 +45,12 @@ const config = new AuthServiceConfig([
     CartComponent,
     CartItemComponent,
     ProductItemComponent,
-    ProductListComponent],
+    ProductListComponent,
+    ListaComponent,
+    ModalComponent,
+    ],
   imports: [
+    FormsModule,
     BrowserModule,
     MatSidenavModule,
     MatListModule,
@@ -53,7 +61,7 @@ const config = new AuthServiceConfig([
     MatIconModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ListaService],
   bootstrap: [PriceSearchComponent]
 })
 export class AppModule { }
