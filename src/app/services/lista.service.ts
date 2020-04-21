@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ListaService {
 
   private lists: Lista[] = [
-    
+
   ];
 
   constructor() { }
