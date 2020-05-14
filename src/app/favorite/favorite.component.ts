@@ -10,11 +10,11 @@ import { ProductService } from 'src/app/services/product.service';
 export class FavoriteComponent implements OnInit {
 
 
-  productList: Product[] = [];
-  constructor(private productService: ProductService) { }
+  
+  constructor() { }
 
   ngOnInit(): void {
-    this.productList = this.productService.getProducts();
+    
   }
 
 }

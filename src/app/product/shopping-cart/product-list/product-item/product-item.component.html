@@ -1,19 +1,20 @@
-<div class="card mb-2 shadow-sm">
-  <img class="bd-placeholder-img card-img-top p-1" width="50%" [src]="productItem.imageUrl" />
 
+<div class="card mx-2 mb-2 shadow-sm">
+  <img class="bd-placeholder-img card-img-top p-1" width="50px" [src]="item.url" />
+
+  <div class="card-header text-center"><strong><h3>{{ item.name}}</h3></strong></div>
   <div class="card-body">
     <p class="card-text">
-      <strong>{{ productItem.price | currency:'BRL' }}</strong>
+      A partir de:
+
     </p>
-    <p class="card-text">{{ productItem.description }}</p>
-
+    
     <app-modal></app-modal>
-
-      <div class="btn-group">
-        <button type="button" class="btn btn-sm btn-primary product-btn" (click)="handleAddToCart(productItem)">Add to
+        <button type="button" class="btn mt-1 btn-sm btn-block btn-primary">Add to
           Cart</button>
-        <button type="button" class="btn btn-sm btn-outline-secondary product-btn">View Details</button>
-      </div>
+      <button type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary">View Details</button>
     
   </div>
 </div>
+
+

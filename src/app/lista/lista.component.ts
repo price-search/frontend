@@ -3,6 +3,7 @@ import {Lista} from 'src/app/models/lista';
 import { ListaService } from '../services/lista.service';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
@@ -12,20 +13,20 @@ export class ListaComponent implements OnInit {
 
   constructor(private listaService: ListaService, private router: Router) { }
 
-  productList: Lista[];
-  item: Lista = new Lista();
+  lists: Lista;
 
   ngOnInit() {
-    this.productList = this.listaService.getList();
+    this.listaService.getList()
+    .subscribe(res => this.lists = res);
   }
 
-  save(item: Lista): void{
+  /*save(item: Lista): void{
     console.log(item);
 
     this.listaService.addList(item);
 
     this.item = new Lista();
 
-  }
+  }*/
 
 }

@@ -10,7 +10,7 @@ import { Product } from 'src/app/models/product';
 export class CartComponent implements OnInit {
 
   cartItems = [
-    // { id: 1, proudctId: 1, productName: 'Test 1', qty: 4, price: 100 },
+     { id: 1, proudctId: 1, productName: 'Test 1', qty: 4, price: 100 },
     // { id: 2, proudctId: 3, productName: 'Test 3', qty: 5, price: 50 },
     // { id: 3, proudctId: 2, productName: 'Test 2', qty: 3, price: 150 },
     // { id: 4, proudctId: 4, productName: 'Test 4', qty: 2, price: 200 },
@@ -30,7 +30,7 @@ export class CartComponent implements OnInit {
 
     let productExists = false;
 
-    for (const i in this.cartItems) {
+    /*for (const i in this.cartItems) {
       if (this.cartItems[i].productId === product.id) {
         this.cartItems[i].qty++;
         productExists = true;
@@ -45,7 +45,7 @@ export class CartComponent implements OnInit {
         qty: 1,
         price: product.price
       });
-    }
+    }*/
     // if (this.cartItems.length === 0) {
     //   this.cartItems.push({
     //     productId: product.id,

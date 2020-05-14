@@ -1,6 +1,7 @@
 import { Product } from './product';
 
 export class Lista {
+    id: number;
     name: string;
-    products: Array<Product> = new Array();
+    product: Product;
 }

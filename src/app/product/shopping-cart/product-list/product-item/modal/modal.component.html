@@ -1,6 +1,6 @@
-<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#myModal">
     Add to List
-</button><br>
+</button>
 <!-- The Modal -->
 <div class="modal fade" id="myModal">
     <div class="modal-dialog modal-dialog-centered">
@@ -15,7 +15,7 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <span *ngFor="let list of lists">
-                    <button type="button" class="btn btn-secondary btn-block btn-sm" data-dismiss="modal">{{list.name}}</button><br>
+                    {{list.name}}<br>
                 </span>
             </div>
 

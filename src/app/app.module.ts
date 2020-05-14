@@ -26,6 +26,8 @@ import {ListaComponent} from './lista/lista.component';
 import {FormsModule} from '@angular/forms';
 import { ListaService } from './services/lista.service';
 import {ModalComponent} from './product/shopping-cart/product-list/product-item/modal/modal.component';
+import { HttpClientModule } from '@angular/common/http';
+import {ListaInternaComponent} from './lista/lista-interna/lista-interna.component';
 
 const google_oauth_client_id =
   '113929152064-osdmb61gpl4d06ls9717kasgfntc4dam.apps.googleusercontent.com';
@@ -43,6 +45,7 @@ const config = new AuthServiceConfig([
     ShoppingCartComponent,
     FiltersComponent,
     CartComponent,
+    ListaInternaComponent,
     CartItemComponent,
     ProductItemComponent,
     ProductListComponent,
@@ -51,6 +54,7 @@ const config = new AuthServiceConfig([
     ],
   imports: [
     FormsModule,
+    HttpClientModule,
     BrowserModule,
     MatSidenavModule,
     MatListModule,

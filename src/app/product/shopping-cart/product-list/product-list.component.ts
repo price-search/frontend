@@ -11,13 +11,13 @@ import { Lista } from 'src/app/models/lista';
 })
 export class ProductListComponent implements OnInit {
 
-  productList: Product[];
-
+  itens: Product;
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.productList = this.productService.getProducts();
-
+    //this.productList = this.productService.getProducts();
+    this.productService.getProducts()
+    .subscribe(res => this.itens = res);
   }
 
 }
