@@ -1,7 +1,7 @@
 import { Product } from './product';
 
-export class Lista {
+export interface Lista {
     id: number;
     name: string;
-    product: Product;
+    product: Product[];
 }

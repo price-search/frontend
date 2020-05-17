@@ -28,6 +28,7 @@ import { ListaService } from './services/lista.service';
 import {ModalComponent} from './product/shopping-cart/product-list/product-item/modal/modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import {ListaInternaComponent} from './lista/lista-interna/lista-interna.component';
+import {AgmCoreModule} from '@agm/core';
 
 const google_oauth_client_id =
   '113929152064-osdmb61gpl4d06ls9717kasgfntc4dam.apps.googleusercontent.com';
@@ -59,6 +60,9 @@ const config = new AuthServiceConfig([
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAA0yZYQ041B50TZiSTh8yf2xxDSCKrH3w'
+    }),
     AppRoutingModule,
     SocialLoginModule.initialize(config),
     MatToolbarModule,
