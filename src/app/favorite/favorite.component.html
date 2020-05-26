@@ -1,0 +1,31 @@
+
+
+    <h1>
+        <div class="mx-auto texto">Favoritos <span class="badge badge-secondary"> 6</span></div>
+    </h1>
+    
+
+<div class="row mx-2">
+    <div *ngFor="let product of products">
+        <div class="card mx-2 mb-2 shadow-sm mt-2">
+            <img class="bd-placeholder-img card-img-top" [src]="product.url" />
+
+            <div class="card-header">
+                <div class="break-word">
+                  <strong> {{product.name}}</strong>
+            
+                </div>
+              </div>
+            <div class="card-body">
+                <p class="card-text">
+                    A partir de: <strong>R$ 1,99 <i class="fas fa-heart float-right"></i></strong>
+
+                </p>
+
+                <app-modal></app-modal>
+                <button type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary">Comparar Preços</button>
+
+            </div>
+        </div>
+    </div>
+</div>

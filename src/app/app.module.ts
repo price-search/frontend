@@ -29,6 +29,7 @@ import {ModalComponent} from './product/shopping-cart/product-list/product-item/
 import { HttpClientModule } from '@angular/common/http';
 import {ListaInternaComponent} from './lista/lista-interna/lista-interna.component';
 import {AgmCoreModule} from '@agm/core';
+import { ComparadorComponent } from './comparador/comparador.component';
 
 const google_oauth_client_id =
   '113929152064-osdmb61gpl4d06ls9717kasgfntc4dam.apps.googleusercontent.com';
@@ -52,6 +53,7 @@ const config = new AuthServiceConfig([
     ProductListComponent,
     ListaComponent,
     ModalComponent,
+    ComparadorComponent,
     ],
   imports: [
     FormsModule,

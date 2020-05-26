@@ -5,6 +5,7 @@ import { Product } from 'src/app/models/product';
 import { Lista } from 'src/app/models/lista';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -21,6 +22,4 @@ export class ProductListComponent implements OnInit {
     this.productService.getProducts()
     .subscribe(res => this.itens = res);
   }
-
-
 }

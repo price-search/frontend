@@ -6,6 +6,7 @@ import { MapaComponent } from './mapa/mapa.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ListaComponent } from './lista/lista.component';
+import { ComparadorComponent } from './comparador/comparador.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
     component: FavoriteComponent
   },
   {
-    path: 'product',
+    path: 'products',
     component: ProductComponent
   },
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'lista',
     component: ListaComponent
+  },
+  {
+    path: 'product/:id',
+    component: ComparadorComponent
   }
 ];
 

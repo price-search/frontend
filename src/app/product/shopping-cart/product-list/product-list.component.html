@@ -1,6 +1,6 @@
 <div class="row">
   
-  <div class="col-md-3" *ngFor="let item of itens; let l = count">
+  <div *ngFor="let item of itens">
     <app-product-item [item]="item"></app-product-item>
   </div>
 </div>
