@@ -7,12 +7,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ListaComponent } from './lista/lista.component';
 import { ComparadorComponent } from './comparador/comparador.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+    
   },
   {
     path: 'favorite',
@@ -20,7 +22,8 @@ const routes: Routes = [
   },
   {
     path: 'products',
-    component: ProductComponent
+    component: ProductComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'mapa',
@@ -29,6 +32,7 @@ const routes: Routes = [
   {
     path: 'lista',
     component: ListaComponent
+    
   },
   {
     path: 'product/:id',

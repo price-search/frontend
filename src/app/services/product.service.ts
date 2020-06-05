@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService {
 
-  private url = "https://my-json-server.typicode.com/price-search/fake-backend/products";
-
+  private url = 'http://price-search-api.herokuapp.com/api/products?join=offers';
+  private url2 = 'http://price-search-api.herokuapp.com/api/products/';
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product>{
@@ -18,7 +18,11 @@ export class ProductService {
   }
 
   getProductById(id): Observable<Product>{
-    return this.http.get<Product>(this.url + '/' + id);
+    return this.http.get<Product>(this.url2 + id + '/?join=offers&join=shop');
   }
+  getOfferById(id): Observable<Product>{
+    return this.http.get<Product>(this.url + '/' + id + '/offers');
+  }
+
 
 }

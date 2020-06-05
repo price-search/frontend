@@ -1,5 +1,5 @@
 <div class="card mx-2 mb-2 shadow-sm">
-  <img class="bd-placeholder-img card-img-top" [src]="item.url" />
+  <img class="bd-placeholder-img card-img-top" [src]="item.imageUrl" />
 
   <div class="card-header">
     <div class="break-word">
@@ -9,12 +9,12 @@
 
   <div class="card-body">
     <p class="card-text">
-      A partir de: <strong>R$ 2,49 <i class="far fa-heart float-right"></i></strong>
+      A partir de: <strong>{{item.offers[0].value}} <i class="far fa-heart float-right"></i></strong>
 
     </p>
 
     <app-modal></app-modal>
-    <button type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary" [routerLink]="['/product', item.id]">
+    <button *ngIf="state" type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary" [routerLink]="['/product', item.id]">
       Comparar Preços</button>
 
   </div>

@@ -1,24 +1,30 @@
 import { Injectable } from '@angular/core';
 
-import {Lista} from 'src/app/models/lista';
+import {ShoppingList, ResponseLista, RequestLista} from 'src/app/models/lista';
 import {Product} from 'src/app/models/product';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { User } from '../models/user';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListaService {
 
-  private url = "https://my-json-server.typicode.com/price-search/fake-backend/listas";
+  private url = 'http://price-search-api.herokuapp.com/api/users/';
+  constructor(private http: HttpClient, private cookie: CookieService) { }
 
-
-  constructor(private http: HttpClient) { }
-
-  getList(): Observable<Lista>{
-    return this.http.get<Lista>(this.url);
+  getList(): Observable<ShoppingList>{
+    return this.http.get<ShoppingList>(this.url + this.cookie.get('userId') + '/shopping-lists');
   }
 
+  createList(request: RequestLista): Observable<ResponseLista>{
+    return this.http.post<ResponseLista>(this.url + this.cookie.get('userId') + '/shopping-lists', request, 
+    {headers: new HttpHeaders({
+      'content-type': 'application/json'
+    })});
+  }
   /*addList(list: Lista) {
     this.lists.push(list);
   }

@@ -7,7 +7,8 @@ import {
   SocialLoginModule,
   AuthServiceConfig,
   GoogleLoginProvider,
-  FacebookLoginProvider
+  FacebookLoginProvider,
+  AuthService
 } from 'angularx-social-login';
 import { BrowserModule } from '@angular/platform-browser';
 import { PriceSearchComponent } from './app.component';
@@ -26,10 +27,15 @@ import {ListaComponent} from './lista/lista.component';
 import {FormsModule} from '@angular/forms';
 import { ListaService } from './services/lista.service';
 import {ModalComponent} from './product/shopping-cart/product-list/product-item/modal/modal.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {ListaInternaComponent} from './lista/lista-interna/lista-interna.component';
 import {AgmCoreModule} from '@agm/core';
 import { ComparadorComponent } from './comparador/comparador.component';
+import {CookieService} from 'ngx-cookie-service';
+import { AuthGuard } from './auth.guard';
+import { LoginServiceService } from './services/login-service.service';
+import {TokenInterceptorService} from './services/token-interceptor.service';
+import { ProductService } from './services/product.service';
 
 const google_oauth_client_id =
   '113929152064-osdmb61gpl4d06ls9717kasgfntc4dam.apps.googleusercontent.com';
@@ -71,7 +77,12 @@ const config = new AuthServiceConfig([
     MatIconModule,
     BrowserAnimationsModule
   ],
-  providers: [ListaService],
+  providers: [ListaService, CookieService, AuthGuard, LoginServiceService, ProductService,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [PriceSearchComponent]
 })
 export class AppModule { }

@@ -22,10 +22,10 @@
         <a class="nav-link" href="products">Products</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="lista" routerLinkActive="Active">Product List</a>
+        <a *ngIf="state" class="nav-link" href="lista">Product List</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="favorite">Favorite</a>
+        <a *ngIf="state" class="nav-link" href="favorite">Favorite</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="mapa">Map</a>
@@ -33,12 +33,13 @@
     </ul>
 
     <ul class="navbar-nav ml-auto">
+
       <li>
-        <button type="button" class="btn btn-success btn-sm mb-1 mr-1" (click)="signIn('Google')">Sign in with Google</button>
+        <button *ngIf="state2" type="button" class="btn btn-success btn-sm mb-1 mr-1" (click)="signIn('Google')">Sign in with Google</button>
       </li>
 
       <li>
-        <button type="button" class="btn btn-danger btn-sm" (click)="signOut()">Sign Out</button>
+        <button *ngIf="state" type="button" class="btn btn-danger btn-sm" (click)="signOut()">Sign Out</button>
       </li>
       
     </ul>
