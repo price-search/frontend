@@ -195,6 +195,9 @@ THE SOFTWARE.
 
 ngx-bootstrap/datepicker
 
+ngx-cookie-service
+MIT
+
 regenerator-runtime
 MIT
 MIT License
