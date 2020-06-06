@@ -1,9 +1,31 @@
 .card-img{
 
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
+    margin-left: 50px;
 }
 
+.card-img2{
+
+    margin-top: 10px;
+    height: 100px;
+    width: 100px;
+    margin-left: 20px;
+}
 .card-title{
+    font-style: bold;
+}
+.footer{ 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.botao{
+    width: 50%;
+}
+
+.texto{
+    font-size: 20px;
     font-style: bold;
 }

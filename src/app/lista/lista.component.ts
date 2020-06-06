@@ -29,21 +29,12 @@ response: ResponseLista;
   ngOnInit() {
     this.listaService.getList()
     .subscribe(res => this.lists = res);
-    console.log('teste');
+    console.log('ID do usuario ' + this.userId);
   }
   criarLista(){
     this.listaService.createList(this.request).subscribe(res => {
             this.response = res;
     });
   }
-
-  /*save(item: Lista): void{
-    console.log(item);
-
-    this.listaService.addList(item);
-
-    this.item = new Lista();
-
-  }*/
 
 }

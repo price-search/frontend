@@ -5,13 +5,14 @@
 
 .card{
 
-  width: 200px;
+  width:250px;
   height: auto;
+
 }
   
 .card-header{
 
-  height: 55px;
+  height: 40px;
   text-align: center;
   color: rgb(75, 75, 75);
   font-size: 100%;
@@ -25,8 +26,11 @@
 
 .card-img-top{
 
-  width: 190px;
+  width: 200px;
   height: 200px;
+  margin-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .break-word{

@@ -15,13 +15,18 @@ export class ComparadorComponent implements OnInit {
   constructor(private route: ActivatedRoute, private productService: ProductService) {
 
   }
-
+ contador  = 0;
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
   });
     this.productService.getProductById(this.id)
-    .subscribe(res => this.itens = res);
+    .subscribe(res => {
+      this.contador = this.contador + 1;
+      console.log('esse contador tem valor de '+ this.contador);
+      this.itens = res;
+    });
+
   }
 
 }

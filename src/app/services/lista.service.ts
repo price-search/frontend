@@ -20,7 +20,7 @@ export class ListaService {
   }
 
   createList(request: RequestLista): Observable<ResponseLista>{
-    return this.http.post<ResponseLista>(this.url + this.cookie.get('userId') + '/shopping-lists', request, 
+    return this.http.post<ResponseLista>(this.url + this.cookie.get('userId') + '/shopping-lists', request,
     {headers: new HttpHeaders({
       'content-type': 'application/json'
     })});

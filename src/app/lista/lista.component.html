@@ -1,6 +1,9 @@
-<button type="button" class="btn botao btn-secondary btn-sm btn-block " data-toggle="modal" data-target="#myModal">
-    Criar nova lista personalizada
-</button>
+<div style="padding: 5px 5px">
+    <button type="button" class="btn botao btn-secondary btn-sm my-2 btn-block" data-toggle="modal"
+        data-target="#myModal">
+        Criar nova lista personalizada
+    </button>
+</div>
 <!-- The Modal -->
 <div class="modal fade" id="myModal">
     <div class="modal-dialog modal-dialog-centered">
@@ -30,17 +33,13 @@
 </div>
 
 <div class="row-1 mt-3">
-        <div class="col mb-3" *ngFor="let list of lists">
-          <app-lista-interna [list]="list"></app-lista-interna>
-        </div>
+    <div class="col mb-3" *ngFor="let list of lists">
+        <app-lista-interna [list]="list"></app-lista-interna>
+    </div>
 </div>
-      
 
-    <!--<form #listaForm="ngForm">
-        <span>Create List</span>
-        <input required id="name" name="name" type="text" class="form-control">
-        
-        <div class="list-footer">
-            <button type="submit" class="btn btn-secondary">Save</button>
-        </div>
-    </form>-->
+<div class="row mx-2 footer">
+    <div class="col">
+      <app-footer></app-footer>
+    </div>
+  </div>

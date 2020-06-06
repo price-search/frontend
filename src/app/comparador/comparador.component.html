@@ -1,16 +1,41 @@
 <div class="container">
-    <div class="card mb-3 mx-2 my-2" style="max-width: auto;">
+    <div class="card my-2">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src= {{itens.imageUrl}} class="card-img">
+                <img src={{itens.imageUrl}} class="card-img">
             </div>
             <div class="col-md">
                 <div class="card-body">
                     <h2 class="card-title">{{itens.name}}</h2>
-                    <p class="card-text">a partir de <strong><h1>R$ {{itens.offers[0].value}}</h1></strong></p>
+                    a partir de
+                    <span class="texto"> <strong>R$ {{itens.offers[0].value}}</strong></span>
                 </div>
+                <button type="button btn-block my-2" class="btn btn-outline-danger" data-dismiss="modal">Adicionar aos
+                    Favoritos</button>
+            </div>
+
+        </div>
+    </div>
+    <div *ngFor="let item of itens.offers">
+        <div class="card mx-2 my-2 card-style" style="max-width: 80%">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src={{itens.imageUrl}} class="card-img2">
+                </div>
+                <div class="col-md">
+                    <div class="card-body">
+                        <p class="card-text">à vista por</p>
+                        <h2><strong>R$ {{item.value}}</strong></h2>
+                        <div class="texto">
+                            Supermercado Alvorada
+                        </div>
+                    </div>
+                </div>
+                <button type="button mx-2 my-2" class="btn btn-danger" data-dismiss="modal" style="align-items:right">Local
+                    da oferta</button>
             </div>
             
         </div>
     </div>
+
 </div>

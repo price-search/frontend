@@ -14,7 +14,6 @@ export class ListaInternaComponent implements OnInit {
   constructor(private listaService: ListaService) { }
 
   ngOnInit(): void {
-    
   }
 }
 
