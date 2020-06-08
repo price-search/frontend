@@ -79,12 +79,7 @@ const config = new AuthServiceConfig([
     MatIconModule,
     BrowserAnimationsModule
   ],
-  providers: [ListaService, CookieService, AuthGuard, LoginServiceService, ProductService,
-  {
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true
-  }],
+  providers: [ListaService, CookieService, AuthGuard, LoginServiceService, ProductService],
   bootstrap: [PriceSearchComponent]
 })
 export class AppModule { }
