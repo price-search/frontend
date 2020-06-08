@@ -1,4 +1,4 @@
-# [Price Search](https://price-search.github.io/frontend)
+# [Price Search](https://price-search-ui.herokuapp.com)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
