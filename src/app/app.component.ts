@@ -13,6 +13,8 @@ import { UserService } from './services/user.service';
 import { CookieService } from 'ngx-cookie-service';
 import { LoginServiceService } from './services/login-service.service';
 import { Router } from '@angular/router';
+import { Product, RequestWord } from './models/product';
+import { SearchService } from './services/search.service';
 
 @Component({
   selector: 'app-root',
@@ -23,10 +25,12 @@ export class PriceSearchComponent {
   title = 'Sign in with Google';
   state = false;
   state2 = true;
+  itens: Product;
   response: ResponseUser;
   request: RequestUser = {
     id: '',
   };
+  name: string;
 
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(
     Breakpoints.Handset
@@ -39,7 +43,8 @@ export class PriceSearchComponent {
     private userService: UserService,
     private cookie: CookieService,
     private srvLogin: LoginServiceService,
-    private router: Router
+    private router: Router,
+    private searchService: SearchService
   ) { }
 
   ngOnInit() {
@@ -82,4 +87,5 @@ export class PriceSearchComponent {
     this.state = false;
     this.state2 = true;
   }
+
 }

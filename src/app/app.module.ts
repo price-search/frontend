@@ -36,6 +36,7 @@ import { AuthGuard } from './auth.guard';
 import { LoginServiceService } from './services/login-service.service';
 import {TokenInterceptorService} from './services/token-interceptor.service';
 import { ProductService } from './services/product.service';
+import { SearchProductsComponent } from './search-products/search-products.component';
 
 const google_oauth_client_id =
   '113929152064-osdmb61gpl4d06ls9717kasgfntc4dam.apps.googleusercontent.com';
@@ -60,6 +61,7 @@ const config = new AuthServiceConfig([
     ListaComponent,
     ModalComponent,
     ComparadorComponent,
+    SearchProductsComponent,
     ],
   imports: [
     FormsModule,

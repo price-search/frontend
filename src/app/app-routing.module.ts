@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ListaComponent } from './lista/lista.component';
 import { ComparadorComponent } from './comparador/comparador.component';
 import { AuthGuard } from './auth.guard';
+import { SearchProductsComponent } from './search-products/search-products.component';
 
 
 const routes: Routes = [
@@ -26,13 +27,17 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'search/:name',
+    component: SearchProductsComponent
+  },
+  {
     path: 'mapa',
     component: MapaComponent
   },
   {
     path: 'lista',
     component: ListaComponent
-    
+
   },
   {
     path: 'product/:id',

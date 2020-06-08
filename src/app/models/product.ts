@@ -6,3 +6,7 @@ export interface Product {
     imageUrl: string;
     offers: Offer[];
 }
+
+export interface RequestWord {
+    name: string;
+}

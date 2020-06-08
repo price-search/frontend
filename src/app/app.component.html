@@ -4,8 +4,8 @@
   </a>
 
   <form class="form-inline">
-    <input class="form-control mr-0 btn-sm col" type="search" placeholder="Buscar...">
-    <button class="btn btn-secondary btn-sm" type="Submit">Ok</button>
+    <input class="form-control mr-0 btn-sm col" placeholder="Buscar..." [(ngModel)]="name" name="something">
+    <button class="btn btn-secondary btn-sm" type="Submit" [routerLink]="['/search', name]">Ok</button>
   </form>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">

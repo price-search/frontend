@@ -23,7 +23,7 @@ export class ComparadorComponent implements OnInit {
     this.productService.getProductById(this.id)
     .subscribe(res => {
       this.contador = this.contador + 1;
-      console.log('esse contador tem valor de '+ this.contador);
+      console.log('esse contador tem valor de ' + this.contador);
       this.itens = res;
     });
 
