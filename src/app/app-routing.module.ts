@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-    
+
   },
   {
     path: 'favorite',
@@ -23,8 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'products',
-    component: ProductComponent,
-    canActivate: [AuthGuard]
+    component: ProductComponent
   },
   {
     path: 'search/:name',
