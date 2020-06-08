@@ -1,4 +1,4 @@
-<div class="card mr-2 mb-2 shadow-sm">
+<div class="card mr-1 mb-2 shadow-sm">
   <img class="bd-placeholder-img card-img-top" [src]="item.imageUrl" />
 
   <div class="card-header">
@@ -13,7 +13,7 @@
     </p>
 
     <app-modal></app-modal>
-    <button *ngIf="state" type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary" [routerLink]="['/product', item.id]">
+    <button type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary" [routerLink]="['/product', item.id]">
       Comparar Preços</button>
 
   </div>

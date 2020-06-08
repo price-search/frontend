@@ -1,23 +1,33 @@
-<div *ngFor="let itens of item">
-    <div class="card mr-2 mb-2 shadow-sm">
-        <img class="bd-placeholder-img card-img-top" />
+<div class="row">
+    <div class="col-md-2 mt-3 mr-2">
+        <app-filters></app-filters>
+    </div>
 
-        <div class="card-header">
-            <div class="break-word">
-                <strong> {{itens.name}}</strong>
+    <div class="col-md-2 mt-3">
+        <div class="row-md-2">
+            <div *ngFor="let itens of item">
+                <div class="card mr-2 mb-2 shadow-sm">
+                    <img src={{itens.imageUrl}} class="bd-placeholder-img card-img-top">
+
+                    <div class="card-header">
+                        <div class="break-word">
+                            <strong> {{itens.name}}</strong>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <p class="card-text">
+                            A partir de: <strong>R$ {{itens.offers[0].value}}<i class="far fa-heart float-right"></i></strong>
+                        </p>
+
+                        <app-modal></app-modal>
+                        <button type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary"
+                            [routerLink]="['/product', itens.id]">
+                            Comparar Preços</button>
+
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="card-body">
-            <p class="card-text">
-                A partir de: <strong>R$ <i class="far fa-heart float-right"></i></strong>
-            </p>
-
-            <app-modal></app-modal>
-            <button type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary"
-                [routerLink]="['/product', itens.id]">
-                Comparar Preços</button>
-
         </div>
     </div>
 </div>

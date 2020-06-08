@@ -6,7 +6,6 @@ import {
 } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { AuthService, GoogleLoginProvider } from 'angularx-social-login';
-import { EventEmitter } from 'events';
 import { HttpClient } from '@angular/common/http';
 import { ResponseUser, RequestUser, User } from './models/user';
 import { UserService } from './services/user.service';
@@ -15,6 +14,7 @@ import { LoginServiceService } from './services/login-service.service';
 import { Router } from '@angular/router';
 import { Product, RequestWord } from './models/product';
 import { SearchService } from './services/search.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -44,7 +44,8 @@ export class PriceSearchComponent {
     private cookie: CookieService,
     private srvLogin: LoginServiceService,
     private router: Router,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private location: Location
   ) { }
 
   ngOnInit() {
@@ -77,7 +78,7 @@ export class PriceSearchComponent {
       console.log(this.srvLogin.isLogged);
       console.log(this.cookie.get('userId'));
       this.create(response.id);
-      this.router.navigate(['/products']);
+      this.router.navigate(['/prodcts']);
     });
   }
   signOut(): void {

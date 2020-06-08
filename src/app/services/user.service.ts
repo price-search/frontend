@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private url = 'http://price-search-api.herokuapp.com/api/users';
+  private url = 'https://price-search-api.herokuapp.com/api/users';
   constructor(private http: HttpClient) { }
 
   createUser(request: RequestUser): Observable<ResponseUser>{

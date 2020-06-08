@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService {
 
-  private url = 'http://price-search-api.herokuapp.com/api/products?join=offers';
-  private url2 = 'http://price-search-api.herokuapp.com/api/products/';
+  private url = 'https://price-search-api.herokuapp.com/api/products?join=offers';
+  private url2 = 'https://price-search-api.herokuapp.com/api/products/';
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product>{

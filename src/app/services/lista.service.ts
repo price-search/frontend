@@ -12,7 +12,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class ListaService {
 
-  private url = 'http://price-search-api.herokuapp.com/api/users/';
+  private url = 'https://price-search-api.herokuapp.com/api/users/';
   constructor(private http: HttpClient, private cookie: CookieService) { }
 
   getList(): Observable<ShoppingList>{
