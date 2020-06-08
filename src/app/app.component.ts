@@ -78,7 +78,7 @@ export class PriceSearchComponent {
       console.log(this.srvLogin.isLogged);
       console.log(this.cookie.get('userId'));
       this.create(response.id);
-      this.router.navigate(['/prodcts']);
+      this.router.navigate(['/products']);
     });
   }
   signOut(): void {
