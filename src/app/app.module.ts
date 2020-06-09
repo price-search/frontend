@@ -37,6 +37,8 @@ import { LoginServiceService } from './services/login-service.service';
 import {TokenInterceptorService} from './services/token-interceptor.service';
 import { ProductService } from './services/product.service';
 import { SearchProductsComponent } from './search-products/search-products.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const google_oauth_client_id =
   '113929152064-osdmb61gpl4d06ls9717kasgfntc4dam.apps.googleusercontent.com';
@@ -77,7 +79,8 @@ const config = new AuthServiceConfig([
     SocialLoginModule.initialize(config),
     MatToolbarModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ListaService, CookieService, AuthGuard, LoginServiceService, ProductService],
   bootstrap: [PriceSearchComponent]
