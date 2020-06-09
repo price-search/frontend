@@ -1,7 +1,7 @@
 {
-  "name": "price-search",
+  "name": "Price Search",
   "short_name": "price-search",
-  "theme_color": "#1976d2",
+  "theme_color": "#FFC107",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
