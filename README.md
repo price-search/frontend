@@ -2,6 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
+## Install node.js 12
+
+if it's windows - Run `choco install nodejs-lts`
+
+if it's linux - Run `nvm install --lts`
+
+## Install Angular
+
+Run `npm install @angular/cli` 
+
+## install all project dependencies
+
+Run `npm install`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
