@@ -3,3 +3,28 @@
     bottom: 0;
     width: 100%;
 }
+
+.fa-trash{
+    
+    font-size: 45px;
+    margin-left: 5px;
+    float: right;
+    cursor: pointer;
+}
+.spinner-border {
+    border: 16px solid silver;
+    border-top: 16px solid #337AB7;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 700ms linear infinite;
+    top:50%;
+    left:50%;
+    position: absolute;
+}
+.fa-pencil-square{
+    font-size: 45px;
+    margin-left: 5px;
+    float: right;
+    cursor: pointer;
+}

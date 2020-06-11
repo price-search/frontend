@@ -25,18 +25,11 @@ export class ListaService {
       'content-type': 'application/json'
     })});
   }
-  /*addList(list: Lista) {
-    this.lists.push(list);
+
+  deleteList(id){
+    return this.http.delete<any>(this.url + this.cookie.get('userId') + '/shopping-lists/' + id);
   }
-
-  getList(): Lista[]{
-
-    return this.lists;
+  alterarNomeDaLista(request: RequestLista, id): Observable<ResponseLista>{
+    return this.http.put<ResponseLista>(this.url + this.cookie.get('userId') + '/shopping-lists/' + id, request);
   }
-
-  addProductToList(product: Product){
-
-    this.lists[0].products.push(product);
-  }*/
-
 }

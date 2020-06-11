@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, Output, Inject } from '@angular/core';
 import {
   BreakpointObserver,
   Breakpoints,
@@ -13,8 +13,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { LoginServiceService } from './services/login-service.service';
 import { Router } from '@angular/router';
 import { Product, RequestWord } from './models/product';
-import { SearchService } from './services/search.service';
-import { Location } from '@angular/common';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -36,6 +35,7 @@ export class PriceSearchComponent {
     Breakpoints.Handset
   );
   UserService: any;
+  window: any;
   constructor(
     private _socioAuthServ: AuthService,
     private breakpointObserver: BreakpointObserver,
@@ -44,8 +44,7 @@ export class PriceSearchComponent {
     private cookie: CookieService,
     private srvLogin: LoginServiceService,
     private router: Router,
-    private searchService: SearchService,
-    private location: Location
+    @Inject(DOCUMENT) private document: Document
   ) { }
 
   ngOnInit() {
@@ -60,7 +59,7 @@ export class PriceSearchComponent {
 
   create(id){
     this.request.id = id;
-    console.log("teste"+ this.request);
+    console.log('teste' + this.request);
     this.userService.createUser(this.request).subscribe(res => {
             this.response = res;
     });
@@ -78,15 +77,21 @@ export class PriceSearchComponent {
       console.log(this.srvLogin.isLogged);
       console.log(this.cookie.get('userId'));
       this.create(response.id);
-      this.router.navigate(['/products']);
+      this.document.location.reload();
     });
   }
-  signOut(): void {
+  async signOut() {
     this._socioAuthServ.signOut();
     console.log('User Signed Out');
     this.cookie.deleteAll();
     this.state = false;
     this.state2 = true;
+    this.router.navigate(['/products']);
+    await this.delay(100);
+    this.document.location.reload();
+  }
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
 }

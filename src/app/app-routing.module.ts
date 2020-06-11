@@ -13,6 +13,9 @@ import { SearchProductsComponent } from './search-products/search-products.compo
 
 const routes: Routes = [
   {
+    path: '' , redirectTo: 'products', pathMatch: 'full'
+  },
+  {
     path: 'home',
     component: HomeComponent
 

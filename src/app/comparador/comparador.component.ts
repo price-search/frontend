@@ -26,7 +26,6 @@ export class ComparadorComponent implements OnInit {
       console.log('esse contador tem valor de ' + this.contador);
       this.itens = res;
     });
-
   }
 
 }
