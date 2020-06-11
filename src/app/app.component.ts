@@ -78,6 +78,7 @@ export class PriceSearchComponent {
       console.log(this.cookie.get('userId'));
       this.create(response.id);
       this.document.location.reload();
+      console.log(platform + ' logged in user data is=', response);
     });
   }
   async signOut() {
