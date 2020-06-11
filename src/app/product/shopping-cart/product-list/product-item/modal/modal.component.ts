@@ -15,10 +15,10 @@ export class ModalComponent implements OnInit {
   lists: ShoppingList;
   state = false;
   ngOnInit(): void {
+    if (this.cookie.get('userId')){
     this.listaService.getList()
     .subscribe(res => this.lists = res);
-    if (this.cookie.get('userId')){
-      this.state = true;
+    this.state = true;
     }else{
       this.state = false;
     }

@@ -48,6 +48,7 @@ export class PriceSearchComponent {
   ) { }
 
   ngOnInit() {
+
     if (this.cookie.get('userId')){
       this.state = true;
       this.state2 = false;
@@ -55,6 +56,7 @@ export class PriceSearchComponent {
       this.state = false;
       this.state2 = true;
     }
+    console.log('ID DO USUARIO =', this.cookie.get('userId'));
   }
 
   create(id){
@@ -78,7 +80,6 @@ export class PriceSearchComponent {
       console.log(this.cookie.get('userId'));
       this.create(response.id);
       this.document.location.reload();
-      console.log(platform + ' logged in user data is=', response);
     });
   }
   async signOut() {
