@@ -38,14 +38,14 @@
         <div class="col mb-3" *ngFor="let list of lists">
             <div class="col">
                 <i class="fa fa-trash" aria-hidden="true" data-toggle="modal"
-                data-placement="top" title="Excluir" [attr.data-target]="'#myModal3'+list.id+list.name"></i>
-                <div class="modal fade" id="myModal3{{list.id + list.name}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                data-placement="top" title="Excluir" [attr.data-target]="'#myModal3'+list.id"></i>
+                <div class="modal fade" id="myModal3{{list.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" 
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-body">
                                 <span>
-                                    <h1>Deseja realmente excluir a lista '{{list.name}}'?</h1>
+                                    <h1>Deseja realmente excluir a lista selecionada?</h1>
                                 </span>
                             </div>
                             <div class="modal-footer">

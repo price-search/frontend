@@ -1,5 +1,5 @@
 <div class="card mr-1 mb-2 shadow-sm">
-  <img class="bd-placeholder-img card-img-top" [src]="item.imageUrl" />
+  <img [routerLink]="['/product', item.id]" class="bd-placeholder-img card-img-top" [src]="item.imageUrl" />
 
   <div class="card-header">
     <div class="break-word">
