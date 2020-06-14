@@ -14,7 +14,7 @@ interface Location{
 })
 export class MapsService {
 
-  private url = 'http://price-search-api.herokuapp.com/api/shops';
+  private url = 'https://price-search-api.herokuapp.com/api/shops';
   constructor(private http: HttpClient) { }
 
   getLocation(){
