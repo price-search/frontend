@@ -4,3 +4,13 @@
 .space {
     flex: 1 1 auto;
   }
+
+.card-inside{
+    width: auto;
+    height: 100px;
+}
+
+.card-img{
+    height: 100px;
+    width: 100px;
+}

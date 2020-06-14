@@ -1,7 +1,7 @@
 .card-img{
 
-    height: 200px;
-    width: 200px;
+    height: 160px;
+    width: 160px;
     margin-left: 50px;
 }
 
@@ -16,7 +16,7 @@
     font-style: bold;
 }
 .footer{ 
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
 }

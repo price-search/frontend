@@ -10,12 +10,16 @@
                     a partir de
                     <span class="texto"> <strong>R$ {{itens.offers[0].value}}</strong></span>
                 </div>
-                
+
             </div>
-            
+
         </div>
+
+        <app-modal></app-modal>
+
         <button type="button btn-block my-2" class="btn btn-outline-danger" data-dismiss="modal">Adicionar aos
             Favoritos</button>
+
     </div>
     <div *ngFor="let item of itens.offers">
         <div class="card mx-2 my-2 card-style" style="max-width: 80%">
@@ -32,11 +36,13 @@
                         </div>
                     </div>
                 </div>
-                <button [routerLink]="['/maps', item.shop.id]" type="button mx-2 my-2" class="btn btn-danger btn-block" data-dismiss="modal" style="align-items:right">Local
+
+                <button [routerLink]="['/maps', item.shop.id]" type="button mx-2 my-2" class="btn btn-danger btn-block"
+                    data-dismiss="modal" style="align-items:right">Local
                     da oferta</button>
             </div>
-            
+
         </div>
     </div>
-
+    <app-footer></app-footer>
 </div>
