@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ProductComponent } from './product/product.component';
 import { MapaComponent } from './mapa/mapa.component';
+import { ShopMapComponent } from './mapa/shop-map/shop-map.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ListaComponent } from './lista/lista.component';
@@ -40,6 +41,10 @@ const routes: Routes = [
     path: 'lista',
     component: ListaComponent
 
+  },
+  {
+    path: 'maps/:id',
+    component: ShopMapComponent
   },
   {
     path: 'product/:id',

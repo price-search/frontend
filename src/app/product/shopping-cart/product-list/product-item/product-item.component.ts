@@ -18,8 +18,12 @@ export class ProductItemComponent implements OnInit {
   @Input() item: Product;
 
   constructor(private listaService: ListaService, private router: Router, private cookie: CookieService) { }
-
+  state = false;
   ngOnInit() {
-
+    if (this.cookie.get('userId')){
+      this.state = true;
+      }else{
+        this.state = false;
+      }
   }
 }

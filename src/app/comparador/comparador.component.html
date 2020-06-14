@@ -28,11 +28,11 @@
                         <p class="card-text">à vista por</p>
                         <h2><strong>R$ {{item.value}}</strong></h2>
                         <div class="texto">
-                            Supermercado Alvorada
+                            {{item.shop.name}}
                         </div>
                     </div>
                 </div>
-                <button type="button mx-2 my-2" class="btn btn-danger btn-block" data-dismiss="modal" style="align-items:right">Local
+                <button [routerLink]="['/maps', item.shop.id]" type="button mx-2 my-2" class="btn btn-danger btn-block" data-dismiss="modal" style="align-items:right">Local
                     da oferta</button>
             </div>
             

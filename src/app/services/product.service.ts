@@ -18,7 +18,7 @@ export class ProductService {
   }
 
   getProductById(id): Observable<Product>{
-    return this.http.get<Product>(this.url2 + id + '/?join=offers&join=shop');
+    return this.http.get<Product>(this.url2 + id + '/?join=offers&join=offers.shop');
   }
   getOfferById(id): Observable<Product>{
     return this.http.get<Product>(this.url + '/' + id + '/offers');

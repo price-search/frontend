@@ -1,0 +1,6 @@
+<agm-map [latitude]="shop.latitude" [longitude]="shop.longitude" [zoom]=15>
+
+    <button id="Logout" class="toggle-button controls button">Logout</button>
+    <agm-marker [latitude]="shop.latitude" [longitude]="shop.longitude" title="{{shop.name}}
+    {{shop.address}}"></agm-marker>
+</agm-map>

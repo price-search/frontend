@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
 
@@ -12,7 +12,7 @@ export class ComparadorComponent implements OnInit {
 
   public id: string;
   itens: Product;
-  constructor(private route: ActivatedRoute, private productService: ProductService) {
+  constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService) {
 
   }
  contador  = 0;
@@ -27,5 +27,4 @@ export class ComparadorComponent implements OnInit {
       this.itens = res;
     });
   }
-
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MapsService} from '../services/maps.service';
+import { Shop } from '../models/shop';
 
 @Component({
   selector: 'app-mapa',
@@ -8,11 +9,17 @@ import {MapsService} from '../services/maps.service';
 })
 export class MapaComponent implements OnInit {
 
-  lat: number = -22.2499;
-  lng: number = -45.7198;
-
-  constructor(private map: MapsService) { }
+  lat: number = -22.252054;
+  lng: number = -45.703617;
+  shops: Shop;
+  constructor(private map: MapsService, private mapService: MapsService) { }
 
   ngOnInit() {
+    this.mapService.getMarkers()
+    .subscribe(res => this.shops = res);
+  }
+
+  mouseOver(){
+    console.log('oi');
   }
 }

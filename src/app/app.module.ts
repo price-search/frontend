@@ -7,8 +7,6 @@ import {
   SocialLoginModule,
   AuthServiceConfig,
   GoogleLoginProvider,
-  FacebookLoginProvider,
-  AuthService
 } from 'angularx-social-login';
 import { BrowserModule } from '@angular/platform-browser';
 import { PriceSearchComponent } from './app.component';
@@ -34,11 +32,11 @@ import { ComparadorComponent } from './comparador/comparador.component';
 import {CookieService} from 'ngx-cookie-service';
 import { AuthGuard } from './auth.guard';
 import { LoginServiceService } from './services/login-service.service';
-import {TokenInterceptorService} from './services/token-interceptor.service';
 import { ProductService } from './services/product.service';
 import { SearchProductsComponent } from './search-products/search-products.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ShopMapComponent } from './mapa/shop-map/shop-map.component';
 
 const google_oauth_client_id =
   '113929152064-osdmb61gpl4d06ls9717kasgfntc4dam.apps.googleusercontent.com';
@@ -64,6 +62,7 @@ const config = new AuthServiceConfig([
     ModalComponent,
     ComparadorComponent,
     SearchProductsComponent,
+    ShopMapComponent,
     ],
   imports: [
     FormsModule,
@@ -73,7 +72,7 @@ const config = new AuthServiceConfig([
     MatListModule,
     MatButtonModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAA0yZYQ041B50TZiSTh8yf2xxDSCKrH3w'
+      apiKey: 'AIzaSyDuIlkvDVDOMxWGlZ7e91XJKmLV4eVGY8s'
     }),
     AppRoutingModule,
     SocialLoginModule.initialize(config),
