@@ -19,13 +19,20 @@
 }
 .row{
     display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   grid-column-gap: 10px;
-   grid-row-gap: 1em;
+    grid-template-columns: 40px auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
 }
 .p{
     white-space: nowrap; 
+    overflow-wrap: break-word;
+    word-wrap: break-word;
     overflow: hidden;
-    text-overflow: ellipsis; 
-    
+    hyphens: auto;
+}
+
+.item3{
+    margin-right: 20px;
+    text-align: right;
+    align-self: center;
 }
