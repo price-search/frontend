@@ -9,7 +9,7 @@
 
   <div class="card-body">
     <p class="card-text">
-       A partir de: <strong>R$ {{item.offers[0].value}} <i *ngIf="state" class="far fa-heart float-right"></i></strong>
+       A partir de: <strong>{{item.offers[0].value | currency:'BRL':true:'1.2-2'}} <i *ngIf="state" class="far fa-heart float-right"></i></strong>
     </p>
 
     <app-modal></app-modal>

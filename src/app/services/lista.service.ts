@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import {ShoppingList, ResponseLista, RequestLista} from 'src/app/models/lista';
-import {Product} from 'src/app/models/product';
+import {Product, RequestProduct, ResponseProduct} from 'src/app/models/product';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user';
@@ -31,5 +31,8 @@ export class ListaService {
   }
   alterarNomeDaLista(request: RequestLista, id): Observable<ResponseLista>{
     return this.http.put<ResponseLista>(this.url + this.cookie.get('userId') + '/shopping-lists/' + id, request);
+  }
+  adicionarProdutoNaLista(request: RequestProduct, id): Observable<ResponseProduct>{
+    return this.http.post<ResponseProduct>(this.url + this.cookie.get('userId') + '/shopping-lists/' + id + '/products', request);
   }
 }

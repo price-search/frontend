@@ -18,7 +18,7 @@
                 <h3>{{item.name}}</h3>
               </div>
               <div class="col align-items-center item3">
-                R$ {{item.offers[0].value}}
+                {{item.offers[0].value | currency:'BRL':true:'1.2-2'}}
               </div>
             </div>
           </div>

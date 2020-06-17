@@ -10,3 +10,11 @@ export interface Product {
 export interface RequestWord {
     name: string;
 }
+
+export interface RequestProduct{
+    id: string;
+}
+
+export interface ResponseProduct{
+    id: string;
+}

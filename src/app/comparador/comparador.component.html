@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h2 class="card-title">{{itens.name}}</h2>
                     a partir de
-                    <span class="texto"> <strong>R$ {{itens.offers[0].value}}</strong></span>
+                    <span class="texto"> <strong>{{itens.offers[0].value | currency:'BRL':true:'1.2-2'}}</strong></span>
                 </div>
 
             </div>
@@ -30,7 +30,7 @@
                 <div class="col-md">
                     <div class="card-body">
                         <p class="card-text">à vista por</p>
-                        <h2><strong>R$ {{item.value}}</strong></h2>
+                        <h2><strong>{{item.value | currency:'BRL':true:'1.2-2'}}</strong></h2>
                         <div class="texto">
                             {{item.shop.name}}
                         </div>
