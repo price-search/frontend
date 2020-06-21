@@ -21,6 +21,9 @@ export class ListaService {
   getList2(id): Observable<ListProducts>{
     return this.http.get<ListProducts>(this.url + this.cookie.get('userId') + '/shopping-lists/' + id + '/products?join=product&join=product.offers');
   }
+  getFavoriteList(): Observable<ShoppingList>{
+    return this.http.get<ShoppingList>(this.url + this.cookie.get('userId') + '/shopping-lists' + '?limit=1&join=listProducts.product.offers');
+  }
 
   createList(request: RequestLista): Observable<ResponseLista>{
     return this.http.post<ResponseLista>(this.url + this.cookie.get('userId') + '/shopping-lists', request,

@@ -21,10 +21,12 @@ export class ProductItemComponent implements OnInit {
   constructor(private listaService: ListaService, private router: Router, private cookie: CookieService) { }
   response: ResponseProduct;
   state = false;
+  idFav: number;
   request: RequestProduct = {
     productId: null
   };
   lists: ShoppingList;
+  favList: ShoppingList;
   ngOnInit() {
     if (this.cookie.get('userId')){
       this.state = true;
@@ -38,6 +40,10 @@ export class ProductItemComponent implements OnInit {
         }else{
           this.state = false;
         }
+    this.listaService.getFavoriteList()
+    .subscribe(
+      res => this.favList = res);
+
   }
   adicionarProduto(id, listaId){
     console.log('ID da lista: ' + listaId);
@@ -45,6 +51,13 @@ export class ProductItemComponent implements OnInit {
     this.request.productId = id;
     this.listaService.adicionarProdutoNaLista(this.request, listaId).subscribe(res => {
       this.response = res;
-});
+    });
+  }
+
+  AddFavorite(id){
+    console.log('ID DA LISTA FAVORITO: ' + this.idFav);
+    this.listaService.adicionarProdutoNaLista(this.request, this.idFav).subscribe(res => {
+      this.response = res;
+    });
   }
 }

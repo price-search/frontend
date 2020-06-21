@@ -6,17 +6,10 @@ export interface ShoppingList {
     listProducts: ListProducts[];
 }
 
-
-export interface Product2{
-    id: number;
-    name: string;
-    imageUrl: string;
-}
-
 export interface ListProducts{
     shoppingListId: number;
     productId: number;
-    product: Product2[];
+    product: Product;
 
 }
 

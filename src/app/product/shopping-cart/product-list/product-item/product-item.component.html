@@ -1,52 +1,54 @@
 <div class="card mr-1 mb-2 shadow-sm">
-  <img [routerLink]="['/product', item.id]" class="bd-placeholder-img card-img-top" [src]="item.imageUrl" />
+    <img [routerLink]="['/product', item.id]" class="bd-placeholder-img card-img-top" [src]="item.imageUrl" />
 
-  <div class="card-header">
-    <div class="break-word">
-      <strong> {{item.name}}</strong>
-    </div>
-  </div>
-
-  <div class="card-body">
-    <p class="card-text">
-       A partir de: <strong>{{item.offers[0].value | currency:'BRL':true:'1.2-2'}} <i *ngIf="state" class="far fa-heart float-right"></i></strong>
-    </p>
-
-    <button *ngIf="state" type="button" class="btn botao btn-secondary btn-sm btn-block " data-toggle="modal"
-[attr.data-target]="'#myModal2'+item.id" data-target="#myModal">
-    Adicionar à lista
-</button>
-<!-- The Modal -->
-<div class="modal fade" id="myModal2{{item.id}}">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Escolha qual lista deseja inserir o produto</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <span *ngFor="let list of lists">
-                    <a (click)="adicionarProduto(item.id, list.id)">{{list.name}}<br></a>
-                </span>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-
+    <div class="card-header">
+        <div class="break-word">
+            <strong> {{item.name}}</strong>
         </div>
     </div>
-</div>
+
+    <div class="card-body">
+        <p class="card-text">
+            A partir de: <strong>{{item.offers[0].value | currency:'BRL':true:'1.2-2'}} <i *ngIf="state"
+                    class="far fa-heart float-right" (click)="AddFavorite(item.id)"></i></strong>
+        </p>
+
+        <button *ngIf="state" type="button" class="btn botao btn-secondary btn-sm btn-block " data-toggle="modal"
+            [attr.data-target]="'#myModal2'+item.id" data-target="#myModal">
+            Adicionar à lista
+        </button>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal2{{item.id}}">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Escolha qual lista deseja inserir o produto</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <span *ngFor="let list of lists">
+                            <a (click)="adicionarProduto(item.id, list.id)">{{list.name}}<br></a>
+                        </span>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
 
 
-    <button type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary" [routerLink]="['/product', item.id]">
-      Comparar Preços</button>
+        <button type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary"
+            [routerLink]="['/product', item.id]">
+            Comparar Preços</button>
 
-  </div>
+    </div>
 </div>

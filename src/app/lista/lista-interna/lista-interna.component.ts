@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./lista-interna.component.css']
 })
 export class ListaInternaComponent implements OnInit {
+
   itens: ListProducts;
   @Input() list: ShoppingList;
   public isCollapsed = true;
@@ -21,7 +22,6 @@ export class ListaInternaComponent implements OnInit {
     this.listaService.getList2(this.list.id)
     .subscribe(res => this.itens = res);
     console.log('ID DA LISTA: ' + this.list.id);
-    console.log('itens: ' + this.itens.product);
   }
 
 }

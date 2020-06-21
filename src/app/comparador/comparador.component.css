@@ -39,3 +39,8 @@
     grid-column-gap: 10px;
     grid-row-gap: 1em;
 }
+
+.nome-lista:hover{
+    cursor: pointer;
+    color: blue;
+}
