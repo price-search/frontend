@@ -1,8 +1,8 @@
 .card-img{
 
-    height: 160px;
-    width: 160px;
-    margin-left: 50px;
+    height: 140px;
+    width: 140px;
+    margin-left: 5px;
 }
 
 .card-img2{
@@ -10,7 +10,7 @@
     margin-top: 10px;
     height: 100px;
     width: 100px;
-    margin-left: 20px;
+    margin-left: 5px;
 }
 .card-title{
     font-style: bold;
@@ -25,4 +25,17 @@
 .texto{
     font-size: 20px;
     font-style: bold;
+}
+
+.row-x{
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+}
+.row-y{
+    display: grid;
+    grid-template-columns: 140px auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
 }

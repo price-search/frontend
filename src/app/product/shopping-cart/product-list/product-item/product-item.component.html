@@ -12,7 +12,39 @@
        A partir de: <strong>{{item.offers[0].value | currency:'BRL':true:'1.2-2'}} <i *ngIf="state" class="far fa-heart float-right"></i></strong>
     </p>
 
-    <app-modal></app-modal>
+    <button *ngIf="state" type="button" class="btn botao btn-secondary btn-sm btn-block " data-toggle="modal"
+[attr.data-target]="'#myModal2'+item.id" data-target="#myModal">
+    Adicionar à lista
+</button>
+<!-- The Modal -->
+<div class="modal fade" id="myModal2{{item.id}}">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Escolha qual lista deseja inserir o produto</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <span *ngFor="let list of lists">
+                    <a (click)="adicionarProduto(item.id, list.id)">{{list.name}}<br></a>
+                </span>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
     <button type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary" [routerLink]="['/product', item.id]">
       Comparar Preços</button>
 

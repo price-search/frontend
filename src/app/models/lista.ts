@@ -3,12 +3,25 @@ import { Product } from './product';
 export interface ShoppingList {
     id: number;
     name: string;
-    products: Product[];
+    listProducts: ListProducts[];
+}
+
+
+export interface Product2{
+    id: number;
+    name: string;
+    imageUrl: string;
+}
+
+export interface ListProducts{
+    shoppingListId: number;
+    productId: number;
+    product: Product2[];
+
 }
 
 export interface RequestLista{
     name: string;
-    user: User;
 }
 
 export interface User{
@@ -17,7 +30,7 @@ export interface User{
 
 export interface ResponseLista{
     id: string;
-        name: string;
-        products: Product[];
-        user: User;
+    name: string;
+    listProducts: Product[];
+    user: User;
 }

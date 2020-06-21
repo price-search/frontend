@@ -1,8 +1,9 @@
-<button *ngIf="state" type="button" class="btn botao btn-secondary btn-sm btn-block " data-toggle="modal" data-target="#myModal">
+<button *ngIf="state" type="button" class="btn botao btn-secondary btn-sm btn-block " data-toggle="modal"
+[attr.data-target]="'#myModal2'+item" data-target="#myModal">
     Adicionar à lista
 </button>
 <!-- The Modal -->
-<div class="modal fade" id="myModal">
+<div class="modal fade" id="myModal2{{item}}">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
@@ -15,7 +16,7 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <span *ngFor="let list of lists">
-                    <a (click)="adicionarProduto(list.id)">{{list.name}}<br></a>
+                    <a (click)="adicionarProduto(item, list.id)">{{list.name}}<br></a>
                 </span>
             </div>
 

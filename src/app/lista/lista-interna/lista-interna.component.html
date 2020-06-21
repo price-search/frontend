@@ -7,23 +7,24 @@
   <div id="collapseExample" [hidden]="isCollapsed">
     <div class="card">
       <div class="card-body">
+        <div *ngIf="itens">
+          <div *ngFor="let item of itens.product">
 
-        <div *ngFor="let item of itens">
-          <div class="card mb-1 card-inside" style="max-width: auto;">
-            <div class="row">
-              <div class="col ml-1 mt-1">
-                <img src="{{item.imageUrl}}" title="Clique aqui para comparar" class="card-img" [routerLink]="['/product', item.id]">
-              </div>
-              <div class="col p d-flex align-items-center mt-2">
-                <h3>{{item.name}}</h3>
-              </div>
-              <div class="col align-items-center item3">
-                {{item.offers[0].value | currency:'BRL':true:'1.2-2'}}
+            <div class="card mb-1 card-inside" style="max-width: auto;">
+              <div class="row">
+                <div class="col ml-1 mt-1">
+                  <img src="..." title="Clique aqui para comparar" class="card-img"
+                    [routerLink]="['/product', item.id]">
+                </div>
+                <div class="col p d-flex align-items-center mt-2">
+                  <h3>{{item.name}}</h3>
+                </div>
+                <div class="col align-items-center item3">
+                </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>

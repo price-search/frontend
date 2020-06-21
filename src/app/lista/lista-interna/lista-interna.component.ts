@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ShoppingList, ResponseLista } from 'src/app/models/lista';
+import { ShoppingList, ResponseLista, ListProducts } from 'src/app/models/lista';
 import { ListaService } from 'src/app/services/lista.service';
 import { CookieService } from 'ngx-cookie-service';
-import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -11,16 +10,18 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./lista-interna.component.css']
 })
 export class ListaInternaComponent implements OnInit {
-
+  itens: ListProducts;
   @Input() list: ShoppingList;
   public isCollapsed = true;
-  response: ResponseLista;
-  itens: Product;
+
   constructor(private listaService: ListaService, private cookie: CookieService, private productService: ProductService) { }
   private userId = this.cookie.get('userId');
+
   ngOnInit(): void {
-    this.productService.getProducts()
+    this.listaService.getList2(this.list.id)
     .subscribe(res => this.itens = res);
+    console.log('ID DA LISTA: ' + this.list.id);
+    console.log('itens: ' + this.itens.product);
   }
 
 }

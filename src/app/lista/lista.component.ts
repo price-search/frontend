@@ -27,15 +27,16 @@ response: ResponseLista;
      }
      loading = true;
   lists: ShoppingList;
+  public isCollapsed = true;
   private userId = this.cookie.get('userId');
   request: RequestLista = {
-    name: '',
-    user: {id: this.userId}
+    name: ''
   };
   ngOnInit() {
     this.listaService.getList()
     .subscribe(res => this.lists = res);
     console.log('ID do usuario ' + this.userId);
+
   }
   async criarLista(){
     this.listaService.createList(this.request).subscribe(res => {
@@ -57,7 +58,7 @@ response: ResponseLista;
     this.listaService.alterarNomeDaLista(this.request, id).subscribe(res => {
       this.response = res;
   });
-    await this.delay(200);
+    await this.delay(300);
     this.document.location.reload();
   }
   delay(ms: number) {

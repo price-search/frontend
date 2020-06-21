@@ -11,10 +11,13 @@ export interface RequestWord {
     name: string;
 }
 
+
 export interface RequestProduct{
-    id: string;
+    productId: number;
 }
 
 export interface ResponseProduct{
-    id: string;
+    shoppingListId: number;
+    productId: number;
+    product: Product;
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import {ShoppingList, ResponseLista, RequestLista} from 'src/app/models/lista';
+import {ShoppingList, ResponseLista, RequestLista, ListProducts} from 'src/app/models/lista';
 import {Product, RequestProduct, ResponseProduct} from 'src/app/models/product';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -16,7 +16,10 @@ export class ListaService {
   constructor(private http: HttpClient, private cookie: CookieService) { }
 
   getList(): Observable<ShoppingList>{
-    return this.http.get<ShoppingList>(this.url + this.cookie.get('userId') + '/shopping-lists');
+    return this.http.get<ShoppingList>(this.url + this.cookie.get('userId') + '/shopping-lists' + '?join=listProducts.product.offers&join=listProducts.product.offers.shop');
+  }
+  getList2(id): Observable<ListProducts>{
+    return this.http.get<ListProducts>(this.url + this.cookie.get('userId') + '/shopping-lists/' + id + '/products?join=product&join=product.offers');
   }
 
   createList(request: RequestLista): Observable<ResponseLista>{
@@ -33,6 +36,9 @@ export class ListaService {
     return this.http.put<ResponseLista>(this.url + this.cookie.get('userId') + '/shopping-lists/' + id, request);
   }
   adicionarProdutoNaLista(request: RequestProduct, id): Observable<ResponseProduct>{
-    return this.http.post<ResponseProduct>(this.url + this.cookie.get('userId') + '/shopping-lists/' + id + '/products', request);
+    return this.http.post<ResponseProduct>(this.url + this.cookie.get('userId') + '/shopping-lists/' + id + '/products', request,
+    {headers: new HttpHeaders({
+      'content-type': 'application/json'
+    })});
   }
 }
