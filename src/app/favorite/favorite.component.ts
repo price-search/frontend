@@ -6,6 +6,7 @@ import { ListaService } from '../services/lista.service';
 import { ShoppingList } from '../models/lista';
 import { ToastrService } from 'ngx-toastr';
 import { DOCUMENT } from '@angular/common';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-favorite',
@@ -21,7 +22,7 @@ export class FavoriteComponent implements OnInit {
   idFav: number;
   response: ResponseProduct;
   constructor(private listaService: ListaService, private router: Router, private toastr: ToastrService,
-              @Inject(DOCUMENT) private document: Document) { }
+              @Inject(DOCUMENT) private document: Document, private cookie: CookieService) { }
 
   ngOnInit(): void {
     this.listaService.getFavoriteList()
@@ -31,6 +32,7 @@ export class FavoriteComponent implements OnInit {
       this.tamanho = res[0].listProducts.length;
       console.log('lists: ' + this.lists[0].name);
     });
+
   }
   async removerProdutoFavorito(id){
     console.log('ID do produto removido: ' + id);

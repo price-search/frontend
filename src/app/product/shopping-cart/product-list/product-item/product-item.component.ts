@@ -41,12 +41,18 @@ export class ProductItemComponent implements OnInit {
         }else{
           this.state = false;
         }
+    this.listaService.getFavoriteList()
+        .subscribe(res => {
+          this.idFav = res[0].id;
+          console.log('lists: ' + this.lists[0].name);
+        });
 
   }
   adicionarProduto(id, listaId){
     console.log('ID da lista: ' + listaId);
     console.log('ID do produto: ' + id);
     this.request.productId = id;
+    this.toastr.success('Adicionado com sucesso!' , 'Salvo!');
     this.listaService.adicionarProdutoNaLista(this.request, listaId).subscribe(res => {
       this.response = res;
     });
