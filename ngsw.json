@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1592775431365,
+  "timestamp": 1593394483273,
   "index": "/frontend/index.html",
   "assetGroups": [
     {
@@ -10,14 +10,14 @@
       "urls": [
         "/frontend/favicon.ico",
         "/frontend/index.html",
-        "/frontend/main-es2015.c78235e50e355e529517.js",
-        "/frontend/main-es5.c78235e50e355e529517.js",
+        "/frontend/main-es2015.096ab401a710fad5160e.js",
+        "/frontend/main-es5.096ab401a710fad5160e.js",
         "/frontend/manifest.webmanifest",
         "/frontend/polyfills-es2015.598438d4538f3a92831c.js",
         "/frontend/polyfills-es5.04ff15903bea32cf8ccc.js",
         "/frontend/runtime-es2015.1eba213af0b233498d9d.js",
         "/frontend/runtime-es5.1eba213af0b233498d9d.js",
-        "/frontend/styles.78a818c70a40a2affc11.css"
+        "/frontend/styles.3f0a2b824d1ec7ea470a.css"
       ],
       "patterns": []
     },
@@ -59,15 +59,15 @@
     "/frontend/fontawesome-webfont.8b43027f47b20503057d.eot": "d980c2ce873dc43af460d4d572d441304499f400",
     "/frontend/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
     "/frontend/fontawesome-webfont.f691f37e57f04c152e23.woff": "28b782240b3e76db824e12c02754a9731a167527",
-    "/frontend/index.html": "dc7ec26eb314ed2f392c2cb2a33d25e2e9c53bd3",
-    "/frontend/main-es2015.c78235e50e355e529517.js": "0ce14dd52dd2fde243417e802ceee7e4db884b57",
-    "/frontend/main-es5.c78235e50e355e529517.js": "10f05efe398a251c77cd6496e964f0f6be11f864",
+    "/frontend/index.html": "dbc8a05f9f96b276135949bcb0918bfd1cb7a283",
+    "/frontend/main-es2015.096ab401a710fad5160e.js": "a36f6ed29295d7e8efcc02f22af7a56308fe2d2f",
+    "/frontend/main-es5.096ab401a710fad5160e.js": "a8306c6c8416d6930c9323f73cfe4e7c8b7f2309",
     "/frontend/manifest.webmanifest": "b00a7c226505cf3908b4cb9f98099b70412fc54e",
     "/frontend/polyfills-es2015.598438d4538f3a92831c.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "/frontend/polyfills-es5.04ff15903bea32cf8ccc.js": "e51a1de4f016cd689dbdbef51043dec9518c4111",
     "/frontend/runtime-es2015.1eba213af0b233498d9d.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/frontend/runtime-es5.1eba213af0b233498d9d.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/frontend/styles.78a818c70a40a2affc11.css": "6683a3c93fb4ab37edf77ecb60218b057b1d904e"
+    "/frontend/styles.3f0a2b824d1ec7ea470a.css": "d6dd688536757249925980be36479e1483c14dfa"
   },
   "navigationUrls": [
     {
