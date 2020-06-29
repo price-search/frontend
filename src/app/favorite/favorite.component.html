@@ -1,37 +1,39 @@
-
+<div class="container">
 
     <h1>
-        <div class="mx-auto texto">Favoritos <span class="badge badge-secondary"> 6</span></div>
+        <div class="mx-auto texto">Favoritos <span class="badge badge-secondary">{{tamanho}}</span></div>
     </h1>
-    
 
-<div class="row mx-2">
-    <div *ngFor="let list of lists">
-        
-        <div class="card mx-2 mb-2 shadow-sm mt-2">
-            <img class="bd-placeholder-img card-img-top" [src]="" />
 
-            <div class="card-header">
-                <div class="break-word">
-                  <strong> {{list.listProducts.product.name}}</strong>
-            
+    <div class="row mx-2">
+        <div *ngFor="let list of lists.listProducts">
+
+            <div class="card mx-2 mb-2 shadow-sm mt-2">
+                <img class="bd-placeholder-img card-img-top" [src]="list.product.imageUrl" />
+
+                <div class="card-header">
+                    <div class="break-word">
+                        <strong> {{list.product.name}}</strong>
+
+                    </div>
                 </div>
-              </div>
-            <div class="card-body">
-                <p class="card-text">
-                    A partir de: <strong>{{list.product.offers[0].value | currency:'BRL':true:'1.2-2'}} <i *ngIf="state" class="far fa-heart float-right"></i></strong>
+                <div class="card-body">
+                    <p class="card-text">
+                        A partir de: <strong>{{list.product.offers[0].value | currency:'BRL':true:'1.2-2'}} 
+                            <i class="fas fa-heart float-right" (click)="removerProdutoFavorito(list.product.id)"></i></strong>
+                        </p>
 
-                </p>
+                    <button type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary"
+                        [routerLink]="['/product', list.product.id]">
+                        Comparar Preços</button>
 
-                <app-modal></app-modal>
-                <button type="button" class="btn mt-1 btn-sm btn-block btn-outline-secondary">Comparar Preços</button>
-
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="row mx-2 footer">
-    <div class="col">
-      <app-footer></app-footer>
+    <div class="row mx-2 footer">
+        <div class="col">
+            <app-footer></app-footer>
+        </div>
     </div>
-  </div>
+</div>

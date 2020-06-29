@@ -9,8 +9,10 @@
 
     <div class="card-body">
         <p class="card-text">
-            A partir de: <strong>{{item.offers[0].value | currency:'BRL':true:'1.2-2'}} <i *ngIf="state"
-                    class="far fa-heart float-right" (click)="AddFavorite(item.id)"></i></strong>
+            A partir de: <strong>{{item.offers[0].value | currency:'BRL':true:'1.2-2'}} 
+                
+                <i *ngIf="state" class="far fa-heart float-right" (click)="AddFavorite(item.id)"></i></strong>
+                    
         </p>
 
         <button *ngIf="state" type="button" class="btn botao btn-secondary btn-sm btn-block " data-toggle="modal"

@@ -14,13 +14,16 @@ export class ListaInternaComponent implements OnInit {
   itens: ListProducts;
   @Input() list: ShoppingList;
   public isCollapsed = true;
-
+  public tamanho = 0;
   constructor(private listaService: ListaService, private cookie: CookieService, private productService: ProductService) { }
   private userId = this.cookie.get('userId');
 
   ngOnInit(): void {
+    this.tamanho = this.list.listProducts.length;
     this.listaService.getList2(this.list.id)
-    .subscribe(res => this.itens = res);
+    .subscribe(res => {
+      this.itens = res;
+    });
     console.log('ID DA LISTA: ' + this.list.id);
   }
 

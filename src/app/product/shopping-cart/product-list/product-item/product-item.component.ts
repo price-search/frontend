@@ -6,6 +6,7 @@ import {ShoppingList} from 'src/app/models/lista';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ProductService } from 'src/app/services/product.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-item',
@@ -17,15 +18,15 @@ export class ProductItemComponent implements OnInit {
 
  // @Input() productItem: Product;
   @Input() item: Product;
-
-  constructor(private listaService: ListaService, private router: Router, private cookie: CookieService) { }
+  constructor(private listaService: ListaService, private router: Router, private cookie: CookieService,
+              private toastr: ToastrService) { }
   response: ResponseProduct;
   state = false;
-  idFav: number;
   request: RequestProduct = {
     productId: null
   };
   lists: ShoppingList;
+  idFav: number;
   favList: ShoppingList;
   ngOnInit() {
     if (this.cookie.get('userId')){
@@ -40,9 +41,6 @@ export class ProductItemComponent implements OnInit {
         }else{
           this.state = false;
         }
-    this.listaService.getFavoriteList()
-    .subscribe(
-      res => this.favList = res);
 
   }
   adicionarProduto(id, listaId){
@@ -56,6 +54,10 @@ export class ProductItemComponent implements OnInit {
 
   AddFavorite(id){
     console.log('ID DA LISTA FAVORITO: ' + this.idFav);
+    console.log('ID do produto adicionado: ' + id);
+    this.request.productId = id;
+
+    this.toastr.success('Adicionado com sucesso!' , 'Salvo!');
     this.listaService.adicionarProdutoNaLista(this.request, this.idFav).subscribe(res => {
       this.response = res;
     });

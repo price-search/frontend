@@ -8,6 +8,7 @@ import {Router, Event as RouterEvent,
   NavigationError} from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { DOCUMENT } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-lista',
@@ -23,18 +24,22 @@ response: ResponseLista;
   PriceSearchComponent: any;
 
   constructor(private listaService: ListaService, private router: Router, private cookie: CookieService,
-              @Inject(DOCUMENT) private document: Document) {
+              @Inject(DOCUMENT) private document: Document, private toastr: ToastrService) {
      }
      loading = true;
   lists: ShoppingList;
   public isCollapsed = true;
+  public tamanho = 0;
   private userId = this.cookie.get('userId');
   request: RequestLista = {
     name: ''
   };
+
   ngOnInit() {
     this.listaService.getList()
-    .subscribe(res => this.lists = res);
+    .subscribe(res => {
+      this.lists = res;
+    });
     console.log('ID do usuario ' + this.userId);
 
   }

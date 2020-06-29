@@ -5,6 +5,7 @@ import { Product, RequestProduct, ResponseProduct } from '../models/product';
 import { ListaService } from '../services/lista.service';
 import { ShoppingList } from '../models/lista';
 import { CookieService } from 'ngx-cookie-service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-comparador',
@@ -24,8 +25,12 @@ export class ComparadorComponent implements OnInit {
   constructor(private cookie: CookieService,
               private route: ActivatedRoute,
               private productService: ProductService,
-              private listaService: ListaService) {}
- contador  = 0;
+              private listaService: ListaService,
+              private toastr: ToastrService) {}
+  contador  = 0;
+  idFav: number;
+  favList: ShoppingList;
+
   ngOnInit(): void {
     if (this.cookie.get('userId')){
       this.state = true;
@@ -49,12 +54,28 @@ export class ComparadorComponent implements OnInit {
       console.log('esse contador tem valor de ' + this.contador);
       this.itens = res;
     });
+    this.listaService.getFavoriteList()
+    .subscribe(
+      res => {
+        this.idFav = res[0].id;
+        this.favList = res[0];
+    });
   }
   adicionarProduto(id, listaId){
     console.log('ID da lista: ' + listaId);
     console.log('ID do produto: ' + id);
     this.request.productId = id;
+    this.toastr.success('Adicionado com sucesso!' , 'Salvo!');
     this.listaService.adicionarProdutoNaLista(this.request, listaId).subscribe(res => {
+      this.response = res;
+    });
+  }
+  AddFavorite(id){
+    console.log('ID DA LISTA FAVORITO: ' + this.idFav);
+    console.log('ID do produto adicionado: ' + id);
+    this.request.productId = id;
+    this.toastr.success('Adicionado com sucesso!' , 'Salvo!');
+    this.listaService.adicionarProdutoNaLista(this.request, this.idFav).subscribe(res => {
       this.response = res;
     });
   }

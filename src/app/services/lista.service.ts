@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user';
 import { CookieService } from 'ngx-cookie-service';
-
+import {map} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +22,18 @@ export class ListaService {
     return this.http.get<ListProducts>(this.url + this.cookie.get('userId') + '/shopping-lists/' + id + '/products?join=product&join=product.offers');
   }
   getFavoriteList(): Observable<ShoppingList>{
-    return this.http.get<ShoppingList>(this.url + this.cookie.get('userId') + '/shopping-lists' + '?limit=1&join=listProducts.product.offers');
+    return this.http.get<ShoppingList>(this.url + this.cookie.get('userId') + '/shopping-lists' + '?join=listProducts.product.offers&limit=1');
+  }
+  getFavoriteListSpecial(){
+    return this.http.get(this.url + this.cookie.get('userId') + '/shopping-lists' + '?join=listProducts.product.offers&limit=1').pipe(
+      map((result: any[]) => {
+        const productsIds = [];
+
+        result.forEach(item => productsIds.push(item.id));
+
+        return productsIds;
+      })
+    );
   }
 
   createList(request: RequestLista): Observable<ResponseLista>{
@@ -43,5 +54,8 @@ export class ListaService {
     {headers: new HttpHeaders({
       'content-type': 'application/json'
     })});
+  }
+  removerProdutoNaLista(productId, id): Observable<ResponseProduct>{
+    return this.http.delete<any>(this.url + this.cookie.get('userId') + '/shopping-lists/' + id + '/products/' + productId);
   }
 }

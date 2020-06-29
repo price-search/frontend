@@ -37,6 +37,7 @@ import { SearchProductsComponent } from './search-products/search-products.compo
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ShopMapComponent } from './mapa/shop-map/shop-map.component';
+import { ToastrModule} from 'ngx-toastr';
 
 const google_oauth_client_id =
   '113929152064-osdmb61gpl4d06ls9717kasgfntc4dam.apps.googleusercontent.com';
@@ -71,6 +72,12 @@ const config = new AuthServiceConfig([
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      preventDuplicates: false,
+    }),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDuIlkvDVDOMxWGlZ7e91XJKmLV4eVGY8s'
     }),

@@ -6,6 +6,7 @@ import { ShoppingList } from 'src/app/models/lista';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ListaService } from 'src/app/services/lista.service';
 
 @Component({
   selector: 'app-product-list',
@@ -15,7 +16,10 @@ import { Router } from '@angular/router';
 export class ProductListComponent implements OnInit {
 
   itens: Product;
-  constructor(private productService: ProductService, private http: HttpClient) { }
+  lists: ShoppingList;
+  public isCollapsed = true;
+  public state = false;
+  constructor(private productService: ProductService, private http: HttpClient, private listaService: ListaService,) { }
 
   ngOnInit() {
     this.productService.getProducts()
