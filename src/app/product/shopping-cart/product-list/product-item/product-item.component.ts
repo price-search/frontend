@@ -27,7 +27,6 @@ export class ProductItemComponent implements OnInit {
   };
   lists: ShoppingList;
   idFav: number;
-  favList: ShoppingList;
   ngOnInit() {
     if (this.cookie.get('userId')){
       this.state = true;

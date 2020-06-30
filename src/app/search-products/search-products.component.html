@@ -1,10 +1,5 @@
-<div class="row">
-    <div class="col-md-2 mt-3 mr-2">
-        <app-filters></app-filters>
-    </div>
 
-    <div class="col-md-2 mt-3">
-        <div class="row-md-2">
+        <div class="row-md-2 mt-3 ml-3">
             <div *ngFor="let itens of item">
                 <div class="card mr-2 mb-2 shadow-sm">
                     <img src={{itens.imageUrl}} class="bd-placeholder-img card-img-top">
@@ -17,7 +12,7 @@
 
                     <div class="card-body">
                         <p class="card-text">
-                            A partir de: <strong>R$ {{itens.offers[0].value}}<i class="far fa-heart float-right"></i></strong>
+                            A partir de: <strong>R$ {{itens.offers[0].value}}<i *ngIf="state" class="far fa-heart float-right" (click)="AddFavorite(itens.id)"></i></strong>
                         </p>
 
                         <app-modal></app-modal>
@@ -29,5 +24,4 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+ 
