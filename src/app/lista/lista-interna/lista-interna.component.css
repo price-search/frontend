@@ -19,16 +19,16 @@
 }
 .row{
     display: grid;
-    grid-template-columns: 40px 80px auto;
-    grid-column-gap: 10px;
+    grid-template-columns: 40px 40px auto;
+    grid-column-gap: 3px;
     grid-row-gap: 1em;
 }
 .p{
-    white-space: nowrap; 
-    overflow-wrap: break-word;
+   
     word-wrap: break-word;
     overflow: hidden;
     hyphens: auto;
+    font-size: small;
 }
 
 .item3{

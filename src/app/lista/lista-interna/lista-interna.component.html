@@ -16,8 +16,8 @@
                   <img src="{{item.product.imageUrl}}" title="Clique aqui para comparar" class="card-img"
                     [routerLink]="['/product', item.product.id]">
                 </div>
-                <div class="col p d-flex align-items-center mt-2">
-                  <h3>{{item.product.name}}</h3>
+                <div class="col p d-flex align-items-center mt-2" >
+                   {{item.product.name}}
                 </div>
                 <div class="col align-items-center item3">
                   {{item.product.offers[0].value | currency:'BRL':true:'1.2-2'}}
